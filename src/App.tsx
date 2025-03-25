@@ -1,3 +1,9 @@
+import Layout from "./layouts/Layout";
+
 export default function App() {
-  return <div>App</div>;
+  return (
+    <>
+      <Layout />
+    </>
+  );
 }
