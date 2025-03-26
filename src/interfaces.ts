@@ -1,6 +1,13 @@
+interface Note {
+  id: number;
+  createdAt: Date;
+  title: string;
+  content: string;
+}
+
 interface Title {
   id: number;
   title: string;
 }
 
-export type { Title };
+export type { Note, Title };
