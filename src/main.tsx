@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App.tsx";
 import Home from "./pages/Home.tsx";
 import About from "./pages/About.tsx";
+import NotePage from "./pages/NotePage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
             <Route path="about" element={<About />} />
+            <Route path=":noteId" element={<NotePage />} />
           </Route>
         </Routes>
       </BrowserRouter>
