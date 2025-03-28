@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { useQuery } from "@tanstack/react-query";
 import { Note } from "../interfaces.ts";
 
@@ -9,6 +9,7 @@ export default function NotePage() {
   const [content, setContent] = useState("");
 
   const { noteId } = useParams();
+  const navigate = useNavigate();
   const api = import.meta.env.VITE_API;
 
   const { isPending, isError, data, error } = useQuery({
@@ -40,6 +41,17 @@ export default function NotePage() {
     setEditmode(false);
   }
 
+  async function handleDelete() {
+    const confirmed = confirm("Are you sure you want to delete this note?");
+    if (confirmed) {
+      const response = await fetch(`${api}/note/${noteId}`, {
+        method: "delete",
+      });
+      console.log(response);
+      navigate("/");
+    }
+  }
+
   if (isPending) return <p>Loading...</p>;
   if (isError) return <p>{error.message}</p>;
 
@@ -49,6 +61,7 @@ export default function NotePage() {
         <h2>{title}</h2>
         <div>{content}</div>
         <button onClick={() => setEditmode(true)}>Edit</button>
+        <button onClick={handleDelete}>Delete</button>
       </section>
     );
 
