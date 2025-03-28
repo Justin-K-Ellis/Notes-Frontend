@@ -12,7 +12,9 @@ export default function Navbar() {
         <ul>
           <NavLink
             to={"/"}
-            className={({ isActive }) => (isActive ? activeStyle : "")}
+            className={({ isActive }) =>
+              isActive ? activeStyle : "btn btn-ghost"
+            }
           >
             Home
           </NavLink>
@@ -20,7 +22,9 @@ export default function Navbar() {
         <ul>
           <NavLink
             to={"/about"}
-            className={({ isActive }) => (isActive ? activeStyle : "")}
+            className={({ isActive }) =>
+              isActive ? activeStyle : "btn btn-ghost"
+            }
           >
             About
           </NavLink>
