@@ -1,4 +1,7 @@
-body {
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* body {
   margin: 0;
   box-sizing: border-box;
 }
@@ -49,11 +52,11 @@ main {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
+} */
 
 /* Media Queries */
 
-@media (max-width: 400px) {
+/* @media (max-width: 400px) {
   main {
     width: 95%;
   }
@@ -72,4 +75,4 @@ main {
     justify-content: space-evenly;
     width: 100%;
   }
-}
+} */

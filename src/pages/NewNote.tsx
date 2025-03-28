@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { SyntheticEvent, useState } from "react";
 
 export default function NewNote() {
   const [title, setTitle] = useState("");
@@ -6,8 +6,8 @@ export default function NewNote() {
 
   const api = import.meta.env.VITE_API;
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  async function handleSubmit(event: SyntheticEvent) {
+    // event.preventDefault();
     const postData = { title, content };
     const response = await fetch(`${api}/note`, {
       method: "post",
@@ -16,7 +16,6 @@ export default function NewNote() {
         "Content-type": "application/json",
       }),
     });
-    console.log(response);
   }
 
   return (
