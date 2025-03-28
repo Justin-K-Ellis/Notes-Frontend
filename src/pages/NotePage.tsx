@@ -57,29 +57,39 @@ export default function NotePage() {
 
   if (!editmode)
     return (
-      <section className="note-data">
-        <h2>{title}</h2>
-        <div>{content}</div>
-        <button onClick={() => setEditmode(true)}>Edit</button>
-        <button onClick={handleDelete}>Delete</button>
+      <section className="flex flex-col justify-center items-center">
+        <h2 className="text-2xl font-bold">{title}</h2>
+        <div className="text-justify">{content}</div>
+        <div className="flex gap-2">
+          <button onClick={() => setEditmode(true)} className="btn btn-accent">
+            Edit
+          </button>
+          <button onClick={handleDelete} className="btn btn-warning">
+            Delete
+          </button>
+        </div>
       </section>
     );
 
   if (editmode)
     return (
-      <section className="note-data">
+      <section className="flex flex-col justify-center items-center">
         <input
           type="text"
           value={title}
           onChange={(event) => setTitle(event.target.value)}
+          className="input text-2xl font-bold"
         />
         <textarea
           name=""
           id=""
           value={content}
           onChange={(event) => setContent(event.target.value)}
+          className="textarea"
         ></textarea>
-        <button onClick={handleNoteUpdate}>Done</button>
+        <button onClick={handleNoteUpdate} className="btn btn-success">
+          Done
+        </button>
       </section>
     );
 }

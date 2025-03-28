@@ -6,9 +6,9 @@ export default function Layout() {
   return (
     <>
       <Navbar />
-      <div className="layout">
+      <div className="flex">
         <Sidebar />
-        <main>
+        <main className="w-full">
           <Outlet />
         </main>
       </div>

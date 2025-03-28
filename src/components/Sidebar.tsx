@@ -17,11 +17,13 @@ export default function Sidebar() {
   if (isError) return <p>{error.message}</p>;
 
   return (
-    <section className="sidebar">
-      <h2>Notes</h2>
-      <ul>
+    <section className="w-1/6">
+      <ul className="list">
         {data.map((title: Title) => (
-          <li key={title.id}>
+          <li
+            key={title.id}
+            className="border border-base rounded-xs mb-1 hover:bg-base-300"
+          >
             <Link to={title.id.toString()}>{title.title}</Link>
           </li>
         ))}
