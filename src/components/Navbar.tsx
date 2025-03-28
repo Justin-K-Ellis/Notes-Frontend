@@ -13,6 +13,9 @@ export default function Navbar() {
         <ul>
           <NavLink to={"/about"}>About</NavLink>
         </ul>
+        <ul>
+          <NavLink to={"/new"}>New Note</NavLink>
+        </ul>
       </li>
     </nav>
   );
