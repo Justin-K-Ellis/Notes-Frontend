@@ -19,27 +19,30 @@ export default function NewNote() {
   }
 
   return (
-    <section>
-      <h2>Create a new note</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="title">Title</label>
-          <input
-            type="text"
-            id="title"
-            value={title}
-            onChange={(event) => setTitle(event.target.value)}
-          />
-        </div>
-        <div>
-          <textarea
-            name="content"
-            id="content"
-            value={content}
-            onChange={(event) => setContent(event.target.value)}
-          ></textarea>
-        </div>
-        <button>Post</button>
+    <section className="flex flex-col justify-center w-7/10 items-center gap-2">
+      <h2 className="text-2xl font-bold">New Note</h2>
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-2 w-9/10 items-center"
+      >
+        <input
+          type="text"
+          id="title"
+          value={title}
+          onChange={(event) => setTitle(event.target.value)}
+          className="input self-start"
+          placeholder="Title"
+        />
+
+        <textarea
+          name="content"
+          id="content"
+          value={content}
+          onChange={(event) => setContent(event.target.value)}
+          className="textarea w-full"
+        ></textarea>
+
+        <button className="btn btn-success">Post</button>
       </form>
     </section>
   );

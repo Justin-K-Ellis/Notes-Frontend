@@ -17,12 +17,12 @@ export default function Sidebar() {
   if (isError) return <p>{error.message}</p>;
 
   return (
-    <section className="w-1/6">
+    <section className="w-1/6 h-full m-4 p-2 border border-base-300 rounded">
       <ul className="list">
         {data.map((title: Title) => (
           <li
             key={title.id}
-            className="border border-base rounded-xs mb-1 hover:bg-base-300"
+            className="border border-base rounded-xs mb-1 hover:bg-base-300 p-1"
           >
             <Link to={title.id.toString()}>{title.title}</Link>
           </li>

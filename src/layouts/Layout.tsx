@@ -6,9 +6,9 @@ export default function Layout() {
   return (
     <>
       <Navbar />
-      <div className="flex">
+      <div className="flex h-full">
         <Sidebar />
-        <main className="w-full">
+        <main className="w-full flex flex-col items-center">
           <Outlet />
         </main>
       </div>

@@ -4,7 +4,7 @@ export default function Navbar() {
   const activeStyle = "btn btn-outline btn-accent";
 
   return (
-    <nav className="navbar">
+    <nav className="navbar bg-base-200 mb-4">
       <h1 className="navbar-start text-3xl font-bold">
         <Link to={"/"}>Notes</Link>
       </h1>
